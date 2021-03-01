@@ -17,22 +17,17 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2021/2/24
  */
 @RestController
-@RequestMapping(WebRequestMapping.PREFIX+"/a")
+@RequestMapping(WebRequestMapping.PREFIX+"/feign")
 @RefreshScope //动态刷新读取Nacos配置文件
-public class AProviderController {
+public class FeignHttpController {
 
-    private final static Logger log = LoggerFactory.getLogger(AProviderController.class);
+    private final static Logger log = LoggerFactory.getLogger(FeignHttpController.class);
 
 
-    //@NacosValue(value = "${name:默认name}", autoRefreshed = true)
-    @Value(value = "${name:ccc}")
-    private String configName;
-
-    @GetMapping("/{name}")
-    public String index(@PathVariable(name = "name") String name){
+    @GetMapping("/call")
+    public String index(){
         log.info("Nacos客户端[nacos-provider-a:节点b]收到请求");
-        log.info("配置中心："+configName);
-        return String.format("Nacos客户端[nacos-provider-a:节点b]:你好，%s。配置中心：%s",name,configName);
+        return String.format("Nacos客户端[nacos-provider-a:节点b]:返回了数据");
     }
 
 
