@@ -153,7 +153,8 @@
                 </configuration>
             </plugin>
 
-            <plugin>
+            <!-- dockerfile-maven打包上传镜像的案例参考 Http://github.com/DemoMeng/simple-life-better -->
+            <!--<plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>1.4.0</version>
@@ -167,20 +168,20 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <!--Dockerfile默认与pom平级-->
-                    <!--<contextDirectory>${project.basedir}</contextDirectory>-->
-                    <!-- .docker/config.json 阿里云auth鉴权密码，鉴权放在maven的setting.xml中，参考README.md -->
-                    <repository>registry.cn-hangzhou.aliyuncs.com/${aliNameSpace}/provider-b-rep</repository><!-- 仓库名 -->
-                    <tag>0.0.7</tag><!-- 镜像版本 -->
+                    &lt;!&ndash;Dockerfile默认与pom平级&ndash;&gt;
+                    &lt;!&ndash;<contextDirectory>${project.basedir}</contextDirectory>&ndash;&gt;
+                    &lt;!&ndash; .docker/config.json 阿里云auth鉴权密码，鉴权放在maven的setting.xml中，参考README.md &ndash;&gt;
+                    <repository>registry.cn-hangzhou.aliyuncs.com/${aliNameSpace}/provider-b-rep</repository>&lt;!&ndash; 仓库名 &ndash;&gt;
+                    <tag>0.0.7</tag>&lt;!&ndash; 镜像版本 &ndash;&gt;
                     <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
                     <buildArgs>
-                        <JAR_NAME>${project.build.finalName}</JAR_NAME><!--需要想Dockerfile传递的变量-->
+                        <JAR_NAME>${project.build.finalName}</JAR_NAME>&lt;!&ndash;需要想Dockerfile传递的变量&ndash;&gt;
                         <APPLICATION_NAME>${applicationName}</APPLICATION_NAME>
                     </buildArgs>
-                    <skipPush>false</skipPush><!-- 是否跳过 docker push 推送本地镜像到dockerHub或者阿里云等镜像仓库-->
+                    <skipPush>false</skipPush>&lt;!&ndash; 是否跳过 docker push 推送本地镜像到dockerHub或者阿里云等镜像仓库&ndash;&gt;
                     <skip>false</skip>
                 </configuration>
-            </plugin>
+            </plugin>-->
 
             <plugin>
                 <groupId>org.springframework.boot</groupId>
