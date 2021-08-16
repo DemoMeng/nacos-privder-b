@@ -19,8 +19,29 @@ spring:
         min-idle: 0
     timeout: 10000s
 
-
-
+  boot:
+    admin:
+      client:
+        url: http://localhost:20000
+        username: mqz
+        password: mqz
+        instance:
+          prefer-ip: true
+          #service-url: http://localhost:9999
+    #  security:
+    #    user:
+    #      name: "mqz"
+    #      password: "mqz"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    logfile:
+      external-file: log/systemLog.log
 
 #配置swagger-ui 密码登陆
 swagger:
@@ -32,9 +53,9 @@ swagger:
   #自定义配置，是否开启swagger
   enabled: true
   info:
-    title: 提供方b-在线接口文档
+    title: 提供方-在线接口文档
     description: 蒙大拿
-    url: http://localhost:9998/doc.html
+    url: http://localhost:9999/doc.html
     contact: https://github.com/DemoMeng
     version: 1.0
 
