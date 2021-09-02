@@ -25,6 +25,8 @@
         <mars.base.version>0.0.1</mars.base.version>
         <mars.redis.version>0.0.1</mars.redis.version>
         <mars.validation.version>0.0.1</mars.validation.version>
+        <nacos.feign.version>0.0.1</nacos.feign.version>
+        <mars.swagger.better.version>0.0.1</mars.swagger.better.version>
     </properties>
     <dependencies>
 
@@ -85,11 +87,11 @@
 
 
         <!-- 公共依赖 mars-swagger ： -->
-        <dependency>
+        <!--<dependency>
             <groupId>com.mqz.mars.swagger</groupId>
             <artifactId>mars-swagger</artifactId>
             <version>${mars.swagger.version}</version>
-        </dependency>
+        </dependency>-->
 
         <!-- 公共依赖 mars-base ：  -->
         <dependency>
@@ -103,6 +105,18 @@
             <groupId>com.mqz.mars.redis</groupId>
             <artifactId>mars-redis</artifactId>
             <version>${mars.redis.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mqz.nacos.feign</groupId>
+            <artifactId>nacos-feign</artifactId>
+            <version>${nacos.feign.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mqz.mars.swagger.better</groupId>
+            <artifactId>mars-swagger-better</artifactId>
+            <version>${mars.swagger.better.version}</version>
         </dependency>
 
 
